@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ConfigProvider } from 'antd';
+import '@/locales';
+
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+import zhCN from 'antd/lib/locale/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+//import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+//import 'antd/dist/antd.min.css'
+// import 'antd/es/style/themes/default.less';
+import 'antd/dist/antd.less'
+
+// import './App.css';
+import './assets/styles/global.less'
+import Login from './pages/sys/Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider locale={zhCN}>
+      <Login />
+    </ConfigProvider>
   );
 }
 
