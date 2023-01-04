@@ -40,12 +40,7 @@ export default function LoginForm(props: { onSuccessLogin: VoidFunction } & HTML
             Modal.info({ title: '提示', content: '请输入用户名和密码' })
             return
         }
-
-        // if (!factId) {
-        //     Modal.info({ title: '提示', content: '请选择公司' })
-        //     return
-        // }
-
+        
         try {
             setLoading(true)
             const { success, data, message } = await login({
